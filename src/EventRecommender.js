@@ -17,7 +17,7 @@ class EventRecommender {
     // USERS
     // return promise of users from users table in DB
     getAllUsers() {
-        return db.any('SELECT * FROM users')
+        return db.any('SELECT * FROM users ORDER BY user_id')
         .then(function(data) {
             // transforming users in DB with correct key;
             let transformedData = data.map( row => {
